@@ -7,19 +7,22 @@
   <meta name="description" content="けじまる / LP制作。生成ビジュアルを組み込んだ、今っぽい実績ページ風のLPポートフォリオ。" />
   <style>
     :root{
-      --bg:#0c0d11;
-      --bg2:#14161d;
+      --bg:#0a0b0f;
+      --bg2:#12141b;
       --panel:rgba(255,255,255,.05);
-      --line:rgba(255,255,255,.09);
+      --panel-strong:rgba(255,255,255,.08);
+      --line:rgba(255,255,255,.10);
       --text:#f5f7fb;
-      --muted:#b6bdca;
+      --muted:#b8bfcb;
+      --soft:#dfe4ef;
       --yellow:#f4ea63;
       --lime:#d9ff63;
       --violet:#7b61ff;
       --pink:#ff7c8f;
       --max:1240px;
-      --shadow:0 24px 60px rgba(0,0,0,.35);
+      --shadow:0 24px 60px rgba(0,0,0,.34);
     }
+
     *{box-sizing:border-box}
     html{scroll-behavior:smooth}
     body{
@@ -28,17 +31,18 @@
       color:var(--text);
       line-height:1.8;
       background:
-        radial-gradient(circle at 10% 0%, rgba(123,97,255,.18), transparent 24%),
-        radial-gradient(circle at 100% 10%, rgba(255,124,143,.14), transparent 20%),
-        linear-gradient(180deg,#090a0e 0%, #11141b 48%, #0a0b0f 100%);
+        radial-gradient(circle at 10% 0%, rgba(123,97,255,.14), transparent 26%),
+        radial-gradient(circle at 100% 8%, rgba(255,124,143,.12), transparent 20%),
+        linear-gradient(180deg,#08090d 0%, #0f1218 46%, #090a0f 100%);
     }
+
     a{text-decoration:none;color:inherit}
     img{max-width:100%;display:block}
     .wrap{width:min(calc(100% - 32px), var(--max));margin:0 auto}
 
     header{
       position:sticky;top:0;z-index:50;
-      background:rgba(10,11,14,.62);
+      background:rgba(8,10,14,.62);
       backdrop-filter:blur(16px);
       border-bottom:1px solid var(--line);
     }
@@ -51,8 +55,7 @@
     }
     .brand{
       display:flex;align-items:center;gap:12px;
-      font-weight:900;
-      letter-spacing:.03em;
+      font-weight:900;letter-spacing:.03em;
     }
     .mark{
       width:42px;height:42px;border-radius:14px;
@@ -66,40 +69,45 @@
     }
     .nav-cta{
       padding:12px 18px;border-radius:999px;
-      font-weight:800;
-      background:#fff;color:#111;
+      font-weight:900;background:#fff;color:#111;
     }
 
-    .hero{padding:34px 0 24px}
+    section{padding:34px 0}
+    .label{
+      display:inline-flex;align-items:center;gap:8px;
+      padding:8px 12px;border-radius:999px;
+      border:1px solid var(--line);
+      background:rgba(255,255,255,.04);
+      font-size:13px;font-weight:800;color:#edf0f7;
+    }
+    .section-head{margin-bottom:18px}
+    .section-head h2{
+      margin:0 0 8px;
+      font-size:clamp(30px,4vw,52px);
+      line-height:1.04;
+      letter-spacing:-.05em;
+      word-break:keep-all;
+    }
+    .section-head p{
+      margin:0;
+      max-width:68ch;
+      color:var(--muted);
+    }
+
+    .hero{padding-top:34px}
     .hero-grid{
       display:grid;
       grid-template-columns:1.02fr .98fr;
       gap:22px;
       align-items:stretch;
     }
-    .label{
-      display:inline-flex;
-      align-items:center;
-      gap:8px;
-      padding:8px 12px;
-      border-radius:999px;
-      border:1px solid var(--line);
-      background:rgba(255,255,255,.04);
-      font-size:13px;
-      font-weight:800;
-      color:#ebedf2;
-    }
-    .hero-copy{
-      padding-top:10px;
-    }
+    .hero-copy{padding-top:10px}
     .hero-copy h1{
       margin:20px 0 18px;
-      font-size:clamp(44px,6.2vw,90px);
+      font-size:clamp(44px,6.2vw,92px);
       line-height:1.02;
       letter-spacing:-.06em;
-      max-width:none;
       word-break:keep-all;
-      overflow-wrap:normal;
     }
     .hero-copy p{
       margin:0;
@@ -113,10 +121,8 @@
     }
     .btn{
       display:inline-flex;align-items:center;justify-content:center;
-      min-height:54px;
-      padding:0 18px;
-      border-radius:999px;
-      border:1px solid var(--line);
+      min-height:54px;padding:0 18px;
+      border-radius:999px;border:1px solid var(--line);
       font-weight:900;
     }
     .btn.primary{background:#fff;color:#111}
@@ -150,10 +156,16 @@
       border-radius:34px;
       overflow:hidden;
       border:1px solid var(--line);
-      background:
-        linear-gradient(145deg, rgba(123,97,255,.16), rgba(255,124,143,.10) 38%, rgba(255,255,255,.03)),
-        #14161d;
+      background:#13151c;
       box-shadow:var(--shadow);
+    }
+    .hero-visual::before{
+      content:"";
+      position:absolute;inset:0;
+      background:
+        linear-gradient(145deg, rgba(123,97,255,.12), rgba(255,124,143,.08) 40%, rgba(255,255,255,.02));
+      z-index:1;
+      pointer-events:none;
     }
     .hero-image{
       position:absolute;
@@ -162,76 +174,63 @@
       overflow:hidden;
       border:1px solid rgba(255,255,255,.10);
       box-shadow:var(--shadow);
-      background:#0b0b0f;
+      z-index:0;
     }
     .hero-image img{
-      width:100%;
-      height:100%;
-      object-fit:cover;
+      width:100%;height:100%;object-fit:cover;
     }
     .floating{
       position:absolute;
+      z-index:2;
       border-radius:24px;
       border:1px solid rgba(255,255,255,.12);
-      background:rgba(10,12,18,.55);
+      background:rgba(10,12,18,.56);
       backdrop-filter:blur(14px);
       box-shadow:var(--shadow);
     }
-    .f1{
-      left:22px;bottom:24px;width:34%;min-height:120px;padding:18px;
-    }
-    .f2{
-      right:22px;bottom:24px;width:42%;min-height:140px;padding:18px;
-    }
+    .f1{left:22px;bottom:24px;width:34%;min-height:120px;padding:18px}
+    .f2{right:22px;bottom:24px;width:42%;min-height:140px;padding:18px}
     .floating h3{
       margin:0 0 6px;
       font-size:20px;
       letter-spacing:-.03em;
     }
     .floating p{
-      margin:0;color:var(--muted);font-size:14px;
-    }
-
-    section{padding:30px 0}
-    .section-head{margin-bottom:18px}
-    .section-head h2{
-      margin:0 0 8px;
-      font-size:clamp(30px,4vw,52px);
-      line-height:1.04;
-      letter-spacing:-.05em;
-      word-break:keep-all;
-    }
-    .section-head p{
       margin:0;
-      max-width:68ch;
       color:var(--muted);
+      font-size:14px;
     }
 
     .works-grid{
       display:grid;
-      grid-template-columns:1.08fr .92fr;
+      grid-template-columns:1.04fr .96fr;
       gap:18px;
     }
     .feature-card{
       position:relative;
-      min-height:520px;
+      min-height:560px;
       border-radius:32px;
       overflow:hidden;
       border:1px solid var(--line);
-      box-shadow:var(--shadow);
       background:#13151b;
+      box-shadow:var(--shadow);
     }
-    .feature-card .visual{
+    .feature-bg{
+      position:absolute;inset:0;
+    }
+    .feature-bg img{
+      width:100%;height:100%;object-fit:cover;
+    }
+    .feature-overlay{
       position:absolute;inset:0;
       background:
-        linear-gradient(180deg, rgba(0,0,0,.00), rgba(0,0,0,.76) 72%),
-        url('https://user-gen-media-assets.s3.amazonaws.com/gpt4o_images/7a0f6458-58b0-42aa-833a-6f00b09e060d.png') center/cover no-repeat;
+        linear-gradient(180deg, rgba(0,0,0,.04), rgba(0,0,0,.76) 76%);
     }
     .feature-body{
       position:absolute;
       left:0;right:0;bottom:0;
-      padding:24px;
       z-index:2;
+      padding:24px;
     }
     .kicker{
       display:inline-block;
@@ -252,39 +251,34 @@
     .feature-body p{
       margin:0;
       max-width:38ch;
-      color:#d7dcea;
+      color:#d8deea;
     }
 
-    .side-stack{
-      display:grid;
-      gap:18px;
-    }
+    .side-stack{display:grid;gap:18px}
     .mini-card{
-      min-height:250px;
+      min-height:270px;
       border-radius:30px;
       overflow:hidden;
       border:1px solid var(--line);
-      background:rgba(255,255,255,.04);
+      background:#161922;
       position:relative;
       box-shadow:var(--shadow);
     }
-    .mini-card::before{
-      content:"";
+    .mini-media{
       position:absolute;inset:0;
-      background:
-        radial-gradient(circle at 20% 20%, rgba(255,255,255,.14), transparent 20%),
-        linear-gradient(145deg, rgba(123,97,255,.34), rgba(255,124,143,.20) 45%, rgba(244,234,99,.08));
     }
-    .mini-card.dark::before{
-      background:
-        radial-gradient(circle at 20% 20%, rgba(255,255,255,.08), transparent 20%),
-        linear-gradient(145deg, rgba(12,13,16,.94), rgba(39,44,62,.92) 55%, rgba(123,97,255,.18));
+    .mini-media img{
+      width:100%;height:100%;object-fit:cover;
+    }
+    .mini-shade{
+      position:absolute;inset:0;
+      background:linear-gradient(180deg, rgba(0,0,0,.10), rgba(7,8,12,.82) 74%);
     }
     .mini-body{
       position:absolute;
       left:0;right:0;bottom:0;
+      z-index:2;
       padding:20px;
-      background:linear-gradient(180deg, rgba(0,0,0,0), rgba(8,9,12,.86) 68%);
     }
     .mini-body h3{
       margin:0 0 8px;
@@ -353,15 +347,28 @@
     }
 
     .contact-band{
+      position:relative;
       border-radius:36px;
       overflow:hidden;
       border:1px solid var(--line);
-      background:
-        linear-gradient(135deg, rgba(123,97,255,.22), rgba(255,124,143,.16) 44%, rgba(255,255,255,.04)),
-        #14161d;
+      background:#13151b;
       box-shadow:var(--shadow);
     }
+    .contact-bg{
+      position:absolute;inset:0;
+    }
+    .contact-bg img{
+      width:100%;height:100%;object-fit:cover;
+    }
+    .contact-bg::after{
+      content:"";
+      position:absolute;inset:0;
+      background:
+        linear-gradient(135deg, rgba(10,11,16,.62), rgba(10,11,16,.40) 45%, rgba(10,11,16,.68));
+    }
     .contact-grid{
+      position:relative;
+      z-index:2;
       display:grid;
       grid-template-columns:1.05fr .95fr;
       gap:18px;
@@ -373,25 +380,25 @@
       font-size:clamp(30px,4vw,48px);
       line-height:1.06;
       letter-spacing:-.05em;
-      max-width:none;
       word-break:keep-all;
     }
     .contact-copy p{
       margin:0;
       max-width:42ch;
-      color:var(--muted);
+      color:var(--soft);
     }
     .contact-box{
       padding:22px;
       border-radius:28px;
-      background:rgba(10,11,16,.48);
-      border:1px solid rgba(255,255,255,.12);
+      background:rgba(9,11,16,.52);
+      border:1px solid rgba(255,255,255,.14);
       backdrop-filter:blur(12px);
     }
+    .contact-box p{margin:0}
     .contact-box ul{
       margin:12px 0 0;
       padding-left:18px;
-      color:var(--muted);
+      color:var(--soft);
     }
 
     footer{
@@ -407,6 +414,7 @@
       .hero-visual{min-height:680px}
       .nav-links{display:none}
     }
+
     @media (max-width:680px){
       .hero-copy h1{
         font-size:clamp(38px,11vw,56px);
@@ -416,9 +424,7 @@
       .hero-meta,.approach-grid,.flow{grid-template-columns:1fr}
       .hero-visual{min-height:560px}
       .hero-image{inset:14px 14px 160px 14px}
-      .f1,.f2{
-        width:auto;left:14px;right:14px;
-      }
+      .f1,.f2{width:auto;left:14px;right:14px}
       .f1{bottom:138px}
       .f2{bottom:14px}
       .nav-cta{display:none}
@@ -455,7 +461,7 @@
           </div>
           <div class="hero-meta">
             <div class="meta"><strong>Direction</strong><span>構成案から整理</span></div>
-            <div class="meta"><strong>Visual</strong><span>画像で印象を強化</span></div>
+            <div class="meta"><strong>Visual</strong><span>生成画像で印象を強化</span></div>
             <div class="meta"><strong>Build</strong><span>静的LPまで対応</span></div>
           </div>
         </div>
@@ -466,11 +472,11 @@
           </div>
           <div class="floating f1">
             <h3>Visual Impact</h3>
-            <p>テキストだけでは弱かった印象を、ヒーロー画像で一気に引き上げる構成です。</p>
+            <p>文字だけでは弱かった第一印象を、ヒーロー画像でしっかり引き上げる構成です。</p>
           </div>
           <div class="floating f2">
             <h3>Modern LP Direction</h3>
-            <p>広告ビジュアルの空気感を取り入れつつ、ポートフォリオとしても見せやすいトーンに整えています。</p>
+            <p>広告ビジュアルの空気感を入れつつ、ポートフォリオとしても見やすいように整理しています。</p>
           </div>
         </div>
       </div>
@@ -480,33 +486,44 @@
       <div class="wrap">
         <div class="section-head">
           <h2>Selected Works</h2>
-          <p>ヒーロー画像の強さを軸にしつつ、下のセクションではトーン違いの見せ方を並べて、デザインの幅が伝わるようにしています。</p>
+          <p>ヒーローだけで終わらず、中段でもビジュアルの強さを使い分けることで、ページ全体にリズムと完成度を持たせています。</p>
         </div>
 
         <div class="works-grid">
           <article class="feature-card">
-            <div class="visual"></div>
+            <div class="feature-bg">
+              <img src="https://user-gen-media-assets.s3.amazonaws.com/gpt4o_images/eead0733-cec8-4074-b0e8-3b65f77b60e0.png" alt="LPの実績紹介セクション向け生成ビジュアル" />
+            </div>
+            <div class="feature-overlay"></div>
             <div class="feature-body">
-              <span class="kicker">Hero Visual</span>
+              <span class="kicker">Hero & Works Visual</span>
               <h3>生成ビジュアルを組み込んだ<br>リッチなLP表現</h3>
-              <p>印象の弱かったファーストビューを、アートディレクション感のあるビジュアルで引き上げた構成です。</p>
+              <p>ファーストビューだけでなく、実績紹介の見せ場でもビジュアルを使って世界観を補強する構成です。</p>
             </div>
           </article>
 
           <div class="side-stack">
             <article class="mini-card">
+              <div class="mini-media">
+                <img src="https://user-gen-media-assets.s3.amazonaws.com/gpt4o_images/eead0733-cec8-4074-b0e8-3b65f77b60e0.png" alt="縦長カードにも使える追加生成ビジュアル" />
+              </div>
+              <div class="mini-shade"></div>
               <div class="mini-body">
                 <span class="kicker">Editorial Tone</span>
                 <h3>実績ページらしい<br>上品な見せ方</h3>
-                <p>説明過多にせず、余白とビジュアルで見せる方向です。</p>
+                <p>説明を詰め込みすぎず、余白とトーンで見せる方向です。</p>
               </div>
             </article>
 
-            <article class="mini-card dark">
+            <article class="mini-card">
+              <div class="mini-media">
+                <img src="https://user-gen-media-assets.s3.amazonaws.com/gpt4o_images/b47c2549-9ed8-458e-945b-f1bc3a3839fa.png" alt="LP背景やアクセント用の横長生成ビジュアル" />
+              </div>
+              <div class="mini-shade"></div>
               <div class="mini-body">
                 <span class="kicker">Dark Premium</span>
                 <h3>黒ベースで引き締める<br>今っぽい世界観</h3>
-                <p>生成画像ともなじみやすい、濃い背景と発色の強いアクセントを使います。</p>
+                <p>濃い背景と柔らかな光で、安っぽく見えないリッチさを足しています。</p>
               </div>
             </article>
           </div>
@@ -518,22 +535,22 @@
       <div class="wrap">
         <div class="section-head">
           <h2>Approach</h2>
-          <p>画像を足すだけではなく、見出しの改行、余白、カードの強弱、説明量も含めて全体を調整すると、LPの完成度が一段上がります。</p>
+          <p>画像を追加するだけでなく、見出しの改行、余白、情報の密度、CTAの見せ方までまとめて整えることで、LP全体の説得力を上げています。</p>
         </div>
 
         <div class="approach">
           <div class="approach-grid">
             <div class="approach-item">
               <h3>見出しの調整</h3>
-              <p>日本語が不自然に分割されないように、幅と改行位置を手動寄りに整えます。</p>
+              <p>日本語が不自然に折れないように、改行位置と横幅を手動寄りに設計しています。</p>
             </div>
             <div class="approach-item">
-              <h3>画像の主役化</h3>
-              <p>ヒーローでしっかり印象を取り、中段以降では補助的に使って情報を邪魔しないようにします。</p>
+              <h3>画像の使い分け</h3>
+              <p>ヒーローでは強く、実績では上品に、CTAでは空気感として使い分けています。</p>
             </div>
             <div class="approach-item">
               <h3>導線の整理</h3>
-              <p>見栄えを上げつつも、最終的には相談や応募につながる流れを崩さない設計にします。</p>
+              <p>見た目を派手にするだけで終わらず、相談や依頼につながる流れを崩さない構成です。</p>
             </div>
           </div>
         </div>
@@ -544,7 +561,7 @@
       <div class="wrap">
         <div class="section-head">
           <h2>Flow</h2>
-          <p>制作の流れも簡潔に載せることで、雰囲気だけで終わらず、依頼しやすい印象をつくれます。</p>
+          <p>依頼のイメージが伝わるように、制作フローもシンプルに添えて、相談しやすさを補っています。</p>
         </div>
 
         <div class="flow">
@@ -556,12 +573,12 @@
           <div class="step">
             <div class="num">2</div>
             <h3>構成整理</h3>
-            <p>見せる順番と情報量を調整して、骨組みをつくります。</p>
+            <p>見せる順番と情報量を整理して、骨組みをつくります。</p>
           </div>
           <div class="step">
             <div class="num">3</div>
             <h3>デザイン・実装</h3>
-            <p>生成画像も含めて、見た目の強さを整えながら静的LPとして仕上げます。</p>
+            <p>生成画像も組み込みながら、見た目の強さと読みやすさを両立させます。</p>
           </div>
           <div class="step">
             <div class="num">4</div>
@@ -575,12 +592,17 @@
     <section id="contact">
       <div class="wrap">
         <div class="contact-band">
+          <div class="contact-bg">
+            <img src="https://user-gen-media-assets.s3.amazonaws.com/gpt4o_images/b47c2549-9ed8-458e-945b-f1bc3a3839fa.png" alt="CTAセクション背景用の生成ビジュアル" />
+          </div>
+
           <div class="contact-grid">
             <div class="contact-copy">
               <span class="label">Contact</span>
               <h2>見た目の完成度を上げたいLPを、<br>一緒につくる。</h2>
               <p>掲載内容がまだ整理できていない段階でも大丈夫です。構成案から相談したい場合でも対応できます。</p>
             </div>
+
             <div class="contact-box">
               <p><strong>ご相談方法</strong></p>
               <ul>
