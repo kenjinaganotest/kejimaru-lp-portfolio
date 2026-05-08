@@ -3,161 +3,48 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>けじまるLP_ポートフォリオ</title>
-  <meta name="description" content="けじまるLP_ポートフォリオ。個人事業主向けのLP制作サービス紹介ページ。構成案、静的LP、軽微修正まで対応。" />
+  <title>けじまる / LP制作</title>
+  <meta name="description" content="けじまる / LP制作。個人事業主向けのLP制作ポートフォリオ。構成案、静的LP、軽微修正まで対応。" />
   <style>
-    :root { --bg:#f6f3ee; --surface:#fcfaf7; --surface-2:#efe9e1; --text:#22201c; --muted:#6a655d; --line:#d8d0c7; --accent:#0e6b6f; --accent-dark:#0a5053; --accent-soft:#d9eceb; --success:#497e2d; --shadow:0 12px 30px rgba(34,32,28,.08); --max:1120px; }
-    *{box-sizing:border-box} html{scroll-behavior:smooth} body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Hiragino Sans","Yu Gothic","Noto Sans JP",sans-serif;background:linear-gradient(180deg,#f8f5f0 0%,#f3efe8 100%);color:var(--text);line-height:1.7} a{color:inherit} .container{width:min(calc(100% - 32px),var(--max));margin:0 auto} .skip{position:absolute;left:-9999px}.skip:focus{left:16px;top:16px;background:#fff;padding:8px 12px;border-radius:10px;z-index:999} header{position:sticky;top:0;z-index:20;backdrop-filter:blur(14px);background:rgba(246,243,238,.82);border-bottom:1px solid rgba(216,208,199,.8)} .nav{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:72px}.brand{display:flex;align-items:center;gap:12px;font-weight:700}.mark{width:38px;height:38px;border-radius:12px;background:var(--accent);display:grid;place-items:center;color:#fff;box-shadow:var(--shadow)} .nav-links{display:flex;gap:20px;color:var(--muted);font-size:14px}.nav-cta{padding:12px 18px;border-radius:999px;background:var(--accent);color:#fff;font-weight:700;text-decoration:none}.hero{padding:72px 0 44px}.hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:28px;align-items:stretch}.hero-copy,.hero-card,.panel,.portfolio-card,.flow-card,.faq-item,.cta-box{background:rgba(252,250,247,.88);border:1px solid rgba(216,208,199,.9);border-radius:24px;box-shadow:var(--shadow)} .hero-copy{padding:40px}.eyebrow{display:inline-flex;padding:8px 12px;border-radius:999px;background:var(--accent-soft);color:var(--accent-dark);font-weight:700;font-size:13px;letter-spacing:.02em} h1{font-size:clamp(34px,5.5vw,62px);line-height:1.08;margin:18px 0;letter-spacing:-.03em}.lead{font-size:18px;color:var(--muted);max-width:40ch}.hero-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}.btn{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:0 18px;border-radius:999px;font-weight:700;text-decoration:none}.btn-primary{background:var(--accent);color:#fff}.btn-secondary{background:transparent;border:1px solid var(--line);color:var(--text)} .mini-points{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:28px}.mini-points div{background:#fff;border:1px solid var(--line);border-radius:16px;padding:14px;font-size:14px}.hero-card{padding:24px;display:flex;flex-direction:column;justify-content:space-between}.mockup{background:linear-gradient(180deg,#ffffff 0%,#f1ebe2 100%);border:1px solid var(--line);border-radius:20px;padding:18px}.mock-bar{height:12px;border-radius:999px;background:#d8d0c7;margin-bottom:10px}.mock-title{height:24px;width:70%;background:#b9d8d8;border-radius:999px;margin:18px 0 14px}.mock-box{height:88px;border-radius:18px;background:#fff;border:1px solid var(--line);margin-top:12px}.stats{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-top:18px}.stat{padding:16px;border-radius:16px;background:#fff;border:1px solid var(--line)} .stat strong{display:block;font-size:26px;line-height:1.1;margin-bottom:6px} section{padding:28px 0}.section-head{margin-bottom:18px}.section-head h2{font-size:clamp(28px,4vw,42px);line-height:1.15;margin:0 0 8px}.section-head p{color:var(--muted);max-width:62ch;margin:0}.grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.panel{padding:24px}.panel h3{margin:0 0 10px;font-size:20px}.panel p,.panel li{color:var(--muted)} .panel ul{padding-left:18px;margin:10px 0 0}.portfolio-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.portfolio-card{overflow:hidden}.portfolio-top{padding:20px;min-height:180px;color:#fff;background:linear-gradient(135deg,#0e6b6f 0%,#1f8c92 100%);display:flex;flex-direction:column;justify-content:space-between}.portfolio-card:nth-child(2) .portfolio-top{background:linear-gradient(135deg,#8b5a2b 0%,#c88a45 100%)} .portfolio-card:nth-child(3) .portfolio-top{background:linear-gradient(135deg,#5b4f8c 0%,#8372c3 100%)} .portfolio-body{padding:20px}.tag{display:inline-flex;padding:6px 10px;border-radius:999px;background:rgba(255,255,255,.18);font-size:12px;font-weight:700}.flow{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}.flow-card{padding:22px}.num{width:34px;height:34px;border-radius:999px;display:grid;place-items:center;background:var(--accent-soft);color:var(--accent-dark);font-weight:800;margin-bottom:12px}.faq{display:grid;gap:14px}.faq-item{padding:22px}.faq-item h3{margin:0 0 8px;font-size:18px}.cta-box{padding:34px;display:grid;grid-template-columns:1.2fr .8fr;gap:20px;align-items:center;margin:12px 0 72px}.cta-side{background:#fff;border:1px solid var(--line);border-radius:20px;padding:22px}.check{color:var(--success);font-weight:700} footer{padding:0 0 50px;color:var(--muted);font-size:14px}.note{font-size:13px;color:var(--muted);margin-top:8px}@media (max-width:960px){.hero-grid,.cta-box,.portfolio-grid,.grid-3,.flow{grid-template-columns:1fr}.mini-points,.stats{grid-template-columns:1fr 1fr}.nav-links{display:none}.hero-copy,.hero-card,.panel,.portfolio-body,.flow-card,.faq-item,.cta-box{padding:20px}} @media (max-width:640px){.hero{padding-top:42px}.mini-points,.stats{grid-template-columns:1fr}.nav-cta{display:none}.lead{font-size:16px}h1{font-size:clamp(30px,11vw,44px)}}
+    :root{--bg:#f7f1ea;--line:rgba(58,46,32,.10);--text:#241a14;--muted:#6d5e53;--accent:#cd7b3e;--accent2:#d95f74;--shadow:0 18px 50px rgba(40,28,18,.10);--max:1180px}
+    *{box-sizing:border-box} body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Hiragino Sans","Yu Gothic","Noto Sans JP",sans-serif;color:var(--text);background:linear-gradient(180deg,#fcf6ef 0%,#f4ede4 100%);line-height:1.8}
+    a{color:inherit;text-decoration:none}.wrap{width:min(calc(100% - 28px),var(--max));margin:0 auto}
+    header{position:sticky;top:0;z-index:10;background:rgba(252,246,239,.88);backdrop-filter:blur(16px);border-bottom:1px solid rgba(58,46,32,.08)}
+    .nav{min-height:76px;display:flex;align-items:center;justify-content:space-between;gap:16px}.brand{display:flex;align-items:center;gap:12px;font-weight:900}.mark{width:40px;height:40px;border-radius:14px;background:linear-gradient(135deg,var(--accent2),var(--accent));display:grid;place-items:center;color:#fff;box-shadow:var(--shadow)}
+    .cta{padding:12px 18px;border-radius:999px;background:#1f1612;color:#fff;font-weight:800;box-shadow:var(--shadow)}
+    .hero{padding:36px 0 20px}.grid{display:grid;grid-template-columns:1.05fr .95fr;gap:18px;align-items:stretch}
+    .eyebrow{display:inline-flex;align-items:center;padding:8px 12px;border-radius:999px;background:rgba(47,138,123,.12);color:#1f5f56;font-weight:800;font-size:13px}
+    h1{font-size:clamp(38px,6.5vw,72px);line-height:1.02;margin:18px 0 14px;letter-spacing:-.05em;max-width:10ch}.lead{font-size:18px;color:var(--muted);max-width:42ch}
+    .actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:26px}.btn{display:inline-flex;align-items:center;justify-content:center;min-height:52px;padding:0 18px;border-radius:999px;font-weight:900;border:1px solid transparent}.primary{background:#1f1612;color:#fff}.secondary{background:rgba(255,255,255,.55);border-color:var(--line)}
+    .metrics{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:26px}.metric{background:rgba(255,255,255,.68);border:1px solid var(--line);border-radius:20px;padding:14px;box-shadow:var(--shadow)}.metric strong{display:block;font-size:21px;margin-bottom:4px}
+    .visual{position:relative;min-height:620px;border-radius:34px;overflow:hidden;box-shadow:var(--shadow);border:1px solid rgba(58,46,32,.08);background:linear-gradient(135deg,#f8ede1 0%,#efe1cf 45%,#ead7c1 100%)}
+    .card{position:absolute;border-radius:24px;overflow:hidden;box-shadow:0 16px 36px rgba(30,20,10,.16);border:1px solid rgba(255,255,255,.35)}
+    .c1{left:24px;top:26px;width:42%;height:34%;background:linear-gradient(135deg,#ffcf9f,#f39c62)}.c2{right:28px;top:20px;width:31%;height:26%;background:linear-gradient(135deg,#fbe8c7,#f3b46f)}.c3{left:18px;bottom:20px;width:34%;height:28%;background:linear-gradient(135deg,#2f8a7b,#1d4d46)}.c4{right:24px;bottom:28px;width:40%;height:32%;background:linear-gradient(135deg,#d95f74,#f0a4b2)}
+    .label{position:absolute;left:14px;bottom:14px;background:rgba(255,255,255,.88);padding:7px 10px;border-radius:999px;font-size:12px;font-weight:900;color:#201612}.small{display:grid;place-items:center}.small .inner{width:84%;height:84%;border-radius:18px;background:rgba(255,255,255,.84);padding:16px;display:flex;flex-direction:column;justify-content:space-between}.line{height:10px;border-radius:999px;background:rgba(32,22,18,.14)}.big{height:16px;width:64%;background:rgba(32,22,18,.24)}.image{flex:1;margin:10px 0;border-radius:16px;background:linear-gradient(135deg,rgba(205,123,62,.28),rgba(217,95,116,.18))}
+    section{padding:26px 0}.head{margin-bottom:16px}.head h2{font-size:clamp(30px,4vw,48px);line-height:1.08;margin:0 0 8px;letter-spacing:-.04em}.head p{margin:0;color:var(--muted);max-width:68ch}
+    .band{border-radius:32px;overflow:hidden;background:linear-gradient(135deg,#111,#2a1e19);color:#fff;box-shadow:var(--shadow);padding:26px}.band-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:18px;align-items:stretch}.band-copy .eyebrow{background:rgba(255,255,255,.12);color:#fff}.band-copy h3{font-size:clamp(24px,3.5vw,36px);line-height:1.08;margin:14px 0 12px;max-width:14ch}.band-copy p{color:rgba(255,255,255,.8);max-width:42ch;margin:0}.pills{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}.pill{padding:8px 12px;border-radius:999px;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.10);font-size:13px;font-weight:800}
+    .collage{display:grid;grid-template-columns:1.05fr .95fr;gap:14px}.tile{border-radius:28px;overflow:hidden;box-shadow:var(--shadow);position:relative;min-height:220px}.tile .tcap{position:absolute;left:16px;right:16px;bottom:16px;background:rgba(255,255,255,.9);border-radius:18px;padding:12px 14px;font-weight:900}.a{background:linear-gradient(145deg,#f6d9b1,#ef9f62)}.b{background:linear-gradient(145deg,#f4ecdf,#d8a46e)}.c{background:linear-gradient(145deg,#2d2b2b,#0f0f10)}.d{background:linear-gradient(145deg,#ddb3be,#f8e7ef)}.e{background:linear-gradient(145deg,#2f8a7b,#a7d6ce)}.f{background:linear-gradient(145deg,#ffbe86,#ff7b77)}
+    .story{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.story .cardbox{background:rgba(255,255,255,.7);border:1px solid var(--line);border-radius:28px;padding:22px;box-shadow:var(--shadow)}.story h3{margin:0 0 10px;font-size:20px}.story p,.story li{color:var(--muted)}.story ul{margin:10px 0 0;padding-left:18px}
+    .showcase{display:grid;grid-template-columns:1.2fr .8fr;gap:18px;align-items:stretch}.large{background:#fff;border-radius:32px;overflow:hidden;box-shadow:var(--shadow);border:1px solid var(--line)}.top{min-height:340px;background:linear-gradient(135deg,#ffe2b8,#f08d49,#d95f74);position:relative;padding:24px}.stack{position:relative;z-index:1;display:grid;grid-template-columns:1fr 1fr;gap:14px;max-width:90%}.mini{border-radius:22px;overflow:hidden;min-height:120px;background:rgba(255,255,255,.88);box-shadow:0 10px 24px rgba(0,0,0,.12)}.mini.dark{background:rgba(0,0,0,.82);color:#fff}.mini .title{padding:14px;font-weight:900}.mini .body{height:100px;background:linear-gradient(135deg, rgba(255,255,255,.32), rgba(255,255,255,.06))}
+    .bottom{padding:22px;display:grid;grid-template-columns:1.2fr .8fr;gap:16px;align-items:start}.bottom h3{margin:0 0 8px;font-size:24px}.chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:14px}.chip{padding:8px 12px;border-radius:999px;background:#f6eee5;border:1px solid var(--line);font-size:13px;font-weight:800;color:#5a493d}
+    .mini-board{display:grid;gap:14px}.box{border-radius:28px;padding:22px;box-shadow:var(--shadow);border:1px solid var(--line);background:#fff}.blue{background:linear-gradient(135deg,#e8f4ff,#ffffff)}.green{background:linear-gradient(135deg,#e8fff6,#ffffff)}.pink{background:linear-gradient(135deg,#fff0f5,#ffffff)}.box h4{margin:0 0 8px;font-size:18px}.box p{margin:0;color:var(--muted)}
+    .flow{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}.step{background:rgba(255,255,255,.7);border:1px solid var(--line);border-radius:26px;padding:20px;box-shadow:var(--shadow)}.num{width:36px;height:36px;border-radius:50%;display:grid;place-items:center;background:#1f1612;color:#fff;font-weight:900;margin-bottom:10px}
+    .faq{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.faq-item{background:rgba(255,255,255,.74);border:1px solid var(--line);border-radius:26px;padding:20px;box-shadow:var(--shadow)}.faq-item h3{margin:0 0 8px;font-size:18px}
+    .cta-band{border-radius:34px;overflow:hidden;background:linear-gradient(135deg,#1d1410,#36221d 60%,#6e3c29);color:#fff;box-shadow:var(--shadow)}.cta-band .in{display:grid;grid-template-columns:1.2fr .8fr;gap:18px;padding:28px}.contact{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.12);border-radius:28px;padding:22px}.contact a{color:#fff;text-decoration:underline}
+    footer{padding:18px 0 54px;color:var(--muted);font-size:14px}.smalltxt{font-size:13px;color:var(--muted)}
+    @media (max-width:980px){.grid,.band-grid,.showcase,.bottom,.cta-band .in{grid-template-columns:1fr}.story,.flow,.faq{grid-template-columns:1fr 1fr}.collage{grid-template-columns:1fr}.visual{min-height:560px}}
+    @media (max-width:640px){.story,.flow,.faq,.metrics{grid-template-columns:1fr}.visual{min-height:500px}h1{font-size:clamp(34px,12vw,48px)}.lead{font-size:16px}.cta{display:none}}
   </style>
 </head>
 <body>
-  <a class="skip" href="#main">本文へ移動</a>
-  <header>
-    <div class="container nav">
-      <div class="brand">
-        <div class="mark" aria-hidden="true">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5 18.5V5.5H8.5C12.6421 5.5 16 8.85786 16 13V18.5H5Z" fill="white"/><path d="M18.5 5.5V18.5H15C10.8579 18.5 7.5 15.1421 7.5 11V5.5H18.5Z" stroke="white" stroke-width="1.4"/></svg>
-        </div>
-        <div>
-          <div>けじまるLP_ポートフォリオ</div>
-          <div style="font-size:12px;color:var(--muted);font-weight:600;">portfolio sample</div>
-        </div>
-      </div>
-      <nav class="nav-links" aria-label="主要ナビゲーション">
-        <a href="#service">サービス</a>
-        <a href="#works">制作例</a>
-        <a href="#flow">進め方</a>
-        <a href="#faq">FAQ</a>
-      </nav>
-      <a class="nav-cta" href="#contact">相談する</a>
-    </div>
-  </header>
-  <main id="main">
-    <section class="hero">
-      <div class="container hero-grid">
-        <div class="hero-copy">
-          <span class="eyebrow">けじまるLP_ポートフォリオ</span>
-          <h1>サービス内容を<br>伝わる形に整え、<br>問い合わせにつながるLPへ。</h1>
-          <p class="lead">SNSや紹介で見てもらえていても、ページで内容が伝わらないと相談にはつながりにくくなります。情報整理、構成づくり、スマホ最適化を含めて、個人事業向けのLPを作成します。対応範囲は、構成案、静的LP、軽微修正までです。</p>
-          <div class="hero-actions">
-            <a class="btn btn-primary" href="#contact">相談方法を見る</a>
-            <a class="btn btn-secondary" href="#works">制作イメージを見る</a>
-          </div>
-          <div class="mini-points">
-            <div><strong>構成案対応</strong><br>文章がまとまっていなくても整理可能</div>
-            <div><strong>静的LP制作</strong><br>GitHub Pages公開と相性のよい形</div>
-            <div><strong>軽微修正まで</strong><br>公開前後の微調整に対応</div>
-          </div>
-        </div>
-        <div class="hero-card">
-          <div class="mockup">
-            <div class="mock-bar" style="width:28%"></div>
-            <div class="mock-bar" style="width:46%"></div>
-            <div class="mock-title"></div>
-            <div class="mock-bar" style="width:92%"></div>
-            <div class="mock-bar" style="width:86%"></div>
-            <div class="mock-box"></div>
-            <div class="mock-box" style="height:64px"></div>
-          </div>
-          <div class="stats">
-            <div class="stat"><strong>1ページ</strong><span>主導線に絞った設計</span></div>
-            <div class="stat"><strong>3対応</strong><span>構成案・静的LP・軽微修正</span></div>
-          </div>
-        </div>
-      </div>
-    </section>
-    <section id="service">
-      <div class="container">
-        <div class="section-head">
-          <h2>対応しやすいご相談</h2>
-          <p>日本向けのWebでは、信頼感、説明のわかりやすさ、スマホでの読みやすさが特に重要です。情報量は確保しつつ、見やすく整理された構成が好まれます。[page:2]</p>
-        </div>
-        <div class="grid-3">
-          <article class="panel"><h3>SNSはあるが説明ページが弱い</h3><p>InstagramやXを見た人が、どんなサービスかわかるページに整えます。</p></article>
-          <article class="panel"><h3>紹介はあるが問い合わせに繋がりにくい</h3><p>プロフィール、強み、料金、連絡方法を1ページで整理します。</p></article>
-          <article class="panel"><h3>まずは軽く始めたい</h3><p>決済や複雑な機能ではなく、案内と相談導線に絞った静的LPに対応します。</p></article>
-        </div>
-      </div>
-    </section>
-    <section id="works">
-      <div class="container">
-        <div class="section-head">
-          <h2>制作イメージ</h2>
-          <p>GitHub Pagesは静的サイト公開に向いており、公開サイトは1GB以下、月100GB帯域のソフト上限、標準ビルドは1時間10回のソフト上限があります。そのため、軽量なLPの公開・運用と相性が良いです。[page:1]</p>
-        </div>
-        <div class="portfolio-grid">
-          <article class="portfolio-card"><div class="portfolio-top"><span class="tag">架空案件 / コーチング</span><div><h3 style="margin:0 0 8px;font-size:24px;line-height:1.2;">オンライン相談サービス向けLP</h3><p style="margin:0;opacity:.92;">信頼づくりと予約導線を重視した構成。</p></div></div><div class="portfolio-body"><strong>設計意図</strong><p>最初に「誰のどんな悩みを解決するか」を明確化し、その後にプロフィール、相談の流れ、FAQを配置しています。</p></div></article>
-          <article class="portfolio-card"><div class="portfolio-top"><span class="tag">架空案件 / 地域サービス</span><div><h3 style="margin:0 0 8px;font-size:24px;line-height:1.2;">地域密着型サポートサービスLP</h3><p style="margin:0;opacity:.92;">電話・フォームなど複数導線を整理。</p></div></div><div class="portfolio-body"><strong>設計意図</strong><p>利用前に知りたい内容を先回りして整理し、問い合わせへの不安を減らす見せ方にしています。</p></div></article>
-          <article class="portfolio-card"><div class="portfolio-top"><span class="tag">架空案件 / 制作代行</span><div><h3 style="margin:0 0 8px;font-size:24px;line-height:1.2;">個人事業向け制作サービスLP</h3><p style="margin:0;opacity:.92;">実績が少ない段階でも安心感を作る構成。</p></div></div><div class="portfolio-body"><strong>設計意図</strong><p>強みを誇張せず、進め方、対応範囲、確認の丁寧さを前面に出した設計です。</p></div></article>
-        </div>
-      </div>
-    </section>
-    <section>
-      <div class="container">
-        <div class="section-head">
-          <h2>対応範囲</h2>
-          <p>LPでは、明確な価値提案、目立つCTA、モバイル対応、信頼要素の配置が重要とされています。CTAはファーストビューや証拠提示後など、論理的な位置に置くのが有効です。[web:107][web:109][web:114]</p>
-        </div>
-        <div class="grid-3">
-          <article class="panel"><h3>構成案</h3><ul><li>サービス内容の棚卸し</li><li>誰向けかの明確化</li><li>見出しと導線の整理</li></ul></article>
-          <article class="panel"><h3>静的LP</h3><ul><li>1ページの構成設計</li><li>スマホで見やすい実装</li><li>CTAとFAQの組み込み</li></ul></article>
-          <article class="panel"><h3>軽微修正</h3><ul><li>文言修正</li><li>見出しや順番の調整</li><li>公開前後の微調整</li></ul></article>
-        </div>
-      </div>
-    </section>
-    <section id="flow">
-      <div class="container">
-        <div class="section-head">
-          <h2>進め方</h2>
-          <p>最初は複雑な機能を入れず、案内と問い合わせに絞ることで、短期間でも整ったLPにしやすくなります。[page:1]</p>
-        </div>
-        <div class="flow">
-          <article class="flow-card"><div class="num">1</div><h3>ヒアリング</h3><p>サービス内容、使いたい文章、参考サイトを確認します。</p></article>
-          <article class="flow-card"><div class="num">2</div><h3>構成案作成</h3><p>見出し、導線、必要セクションを先に整理します。</p></article>
-          <article class="flow-card"><div class="num">3</div><h3>制作</h3><p>スマホ優先で見やすく整え、確認しながら実装します。</p></article>
-          <article class="flow-card"><div class="num">4</div><h3>軽微修正</h3><p>確認後に必要な調整を行い、公開しやすい形でまとめます。</p></article>
-        </div>
-      </div>
-    </section>
-    <section id="faq">
-      <div class="container">
-        <div class="section-head">
-          <h2>よくあるご質問</h2>
-          <p>日本向けサイトでは、FAQや詳細情報の提示が信頼形成に寄与しやすいとされています。[page:2]</p>
-        </div>
-        <div class="faq">
-          <article class="faq-item"><h3>まだ文章が整理できていなくても大丈夫ですか？</h3><p>大丈夫です。SNSのプロフィール、メモ、既存の紹介文などをもとに、たたき台から整理できます。</p></article>
-          <article class="faq-item"><h3>相談方法はどうなりますか？</h3><p>メールまたはGoogle Chatでのご相談を想定しています。初回のやり取りはメールで、必要に応じてGoogle Chatへ切り替える形でも対応可能です。</p></article>
-          <article class="faq-item"><h3>決済や会員機能は入れられますか？</h3><p>このポートフォリオ想定では、まず案内と問い合わせに絞った構成を前提にしています。GitHub Pagesは商取引やSaaS本体向けの無料ホスティング用途には想定されていません。[page:1]</p></article>
-        </div>
-      </div>
-    </section>
-    <section id="contact">
-      <div class="container">
-        <div class="cta-box">
-          <div>
-            <div class="eyebrow">お問い合わせ前の整理がなくても大丈夫です</div>
-            <h2 style="font-size:clamp(28px,4vw,40px);line-height:1.15;margin:16px 0 10px;">まずは、今ある情報を<br>1ページに整えるところから。</h2>
-            <p style="color:var(--muted);max-width:42ch;">「何を載せればよいかわからない」という段階でも、サービス内容・強み・問い合わせ導線を一緒に整理しながら進められます。</p>
-          </div>
-          <div class="cta-side">
-            <div class="check">ご相談方法</div>
-            <ul style="margin:12px 0 0; padding-left:18px; color:var(--muted);">
-              <li>メール：<a href="mailto:kejiweb78@gmail.com">kejiweb78@gmail.com</a></li>
-              <li>無料ツール：Google Chat</li>
-              <li>対応範囲：構成案、静的LP、軽微修正まで</li>
-            </ul>
-            <p style="margin:18px 0 0;font-weight:700;">ご相談用テキスト例</p>
-            <p class="note">「個人事業向けのLPを検討しています。今あるプロフィール文とSNS情報をもとに、1ページで整理したいです。」</p>
-          </div>
-        </div>
-      </div>
-    </section>
+  <header><div class="wrap nav"><div class="brand"><div class="mark">L</div><div>けじまる / LP制作</div></div><a class="cta" href="#contact">相談する</a></div></header>
+  <main>
+    <section class="hero"><div class="wrap grid"><div><span class="eyebrow">Design-rich LP Portfolio / HTML & CSS</span><h1>LPを、<br>作品として<br>見せる。</h1><p class="lead">個人事業主向けLP制作のポートフォリオです。構成案づくりから静的LPの実装、軽微修正まで対応しつつ、見た目の印象で“任せたい”と思ってもらえるデザインを目指しています。</p><div class="actions"><a class="btn primary" href="#contact">相談方法を見る</a><a class="btn secondary" href="#works">制作例を見る</a></div><div class="metrics"><div class="metric"><strong>構成案</strong><span>情報整理から対応</span></div><div class="metric"><strong>静的LP</strong><span>GitHub Pages向き</span></div><div class="metric"><strong>軽微修正</strong><span>公開後も対応</span></div></div></div><div class="visual"><div class="card c1"><div class="label">Hero / 強い訴求</div></div><div class="card c2 small"><div class="inner"><div class="line big"></div><div class="image"></div><div class="line"></div></div><div class="label">Card / 情報整理</div></div><div class="card c3"><div class="label">Section / 信頼感</div></div><div class="card c4"><div class="label">CTA / 相談導線</div></div></div></div></section>
+    <section id="works"><div class="wrap"><div class="head"><h2>制作例を、LPらしく見せる</h2><p>単なる作品一覧ではなく、色面・余白・画像・コピーのリズムで“見せ場”を作る構成です。日本向けのWebでは、見やすさと信頼感が重要なので、派手さよりも整理された強さを意識しています。</p></div><div class="band"><div class="band-grid"><div class="band-copy"><span class="eyebrow">Service / Visual-driven LP</span><h3>見た目で惹きつけ、<br>中身で安心させる。</h3><p>ヒーローで世界観を出し、途中で実績風の見せ場を置き、最後に相談導線で締める流れです。</p><div class="pills"><span class="pill">信頼感</span><span class="pill">視線誘導</span><span class="pill">相談導線</span><span class="pill">レスポンシブ</span></div></div><div class="collage"><div class="tile a"><div class="tcap">Warm / Food-like tone</div></div><div class="tile b"><div class="tcap">Soft / Service tone</div></div><div class="tile c"><div class="tcap" style="color:#fff;background:rgba(255,255,255,.08);backdrop-filter:blur(8px)">Dark / Premium tone</div></div><div class="tile d"><div class="tcap">Pink / Friendly tone</div></div><div class="tile e"><div class="tcap">Green / Trust tone</div></div><div class="tile f"><div class="tcap">Accent / CTA tone</div></div></div></div></div></section>
+    <section><div class="wrap"><div class="head"><h2>LPらしさを出すための設計</h2><p>この版は“ポートフォリオ”というより、広告LPに近い流れにしています。上から順に、訴求→共感→実績→進め方→FAQ→CTAへつなぐ、王道の構成です。</p></div><div class="story"><article class="cardbox"><h3>01. 上部で惹きつける</h3><p>ヘッドライン、短い説明、強いCTA、数字のような要素を使い、最初の5秒で印象を作ります。</p><ul><li>大きい文字</li><li>短いメッセージ</li><li>ボタンの強調</li></ul></article><article class="cardbox"><h3>02. 中盤で信頼を積む</h3><p>デザイン例を並べるだけでなく、なぜその形にしたかを説明して、制作力を見せます。</p><ul><li>制作意図</li><li>見せ場の分散</li><li>画像の多層化</li></ul></article><article class="cardbox"><h3>03. 最後に相談へつなぐ</h3><p>問い合わせを最終ゴールにし、メールとGoogle Chatを明示して行動しやすくします。</p><ul><li>相談導線の明確化</li><li>連絡手段の記載</li><li>不安の解消</li></ul></article></div></div></section>
+    <section><div class="wrap"><div class="head"><h2>このポートフォリオの見せ場</h2><p>「画像ギャラリー」「説明カード」「大型の帯」「CTAバナー」を混ぜて、単調にならないようにしています。添付のような“デザイン豊富”な印象に寄せるため、セクションごとにトーンを切り替えています。</p></div><div class="showcase"><article class="large"><div class="top"><div class="stack"><div class="mini"><div class="title">Vivid LP</div><div class="body"></div></div><div class="mini dark"><div class="title">Premium LP</div><div class="body"></div></div><div class="mini"><div class="title">Soft LP</div><div class="body"></div></div><div class="mini dark"><div class="title">Trust LP</div><div class="body"></div></div></div></div><div class="bottom"><div><h3>見せ方の幅を広く持たせる</h3><p class="smalltxt">1つのトーンに固定せず、やわらかい色、落ち着いた色、強い色を使い分けることで、LP全体にリズムを出します。</p><div class="chips"><span class="chip">色面</span><span class="chip">重なり</span><span class="chip">余白</span><span class="chip">CTA</span><span class="chip">実績風</span></div></div><div class="box blue"><h4>見せたい印象</h4><p>“普通の制作見本”ではなく、依頼したくなる雰囲気を出すことを優先しています。</p></div></div></article><div class="mini-board"><div class="box green"><h4>構成案</h4><p>1ページでも情報を詰め込みすぎず、見やすい順番に整理します。</p></div><div class="box pink"><h4>静的LP</h4><p>公開しやすく、更新しやすいHTML/CSSベースで制作します。</p></div><div class="box blue"><h4>軽微修正</h4><p>公開後の文言修正や崩れ修正にも対応しやすい構成です。</p></div></div></div></div></section>
+    <section id="contact"><div class="wrap"><div class="cta-band"><div class="in"><div><span class="eyebrow" style="background:rgba(255,255,255,.12);color:#fff">CONTACT</span><h2 style="font-size:clamp(28px,4vw,44px);line-height:1.06;margin:16px 0 10px;max-width:12ch">作品として見せられるLPを、<br>一緒に。</h2><p style="margin:0;max-width:48ch;color:rgba(255,255,255,.82)">掲載したい内容や雰囲気に合わせて、デザインの方向性から整えます。見た目にこだわりたい場合でも、相談しながら調整可能です。</p></div><div class="contact"><p><strong>ご相談方法</strong></p><ul style="margin:12px 0 0;padding-left:18px;color:rgba(255,255,255,.82)"><li>メール：kejiweb78@gmail.com</li><li>無料ツール：Google Chat</li><li>対応範囲：構成案、静的LP、軽微修正まで</li></ul></div></div></div></div></section>
   </main>
-  <footer>
-    <div class="container">
-      <p>表示名：けじまるLP_ポートフォリオ / ご相談方法：メール（kejiweb78@gmail.com）またはGoogle Chat / 対応範囲：構成案、静的LP、軽微修正まで。掲載している案件例は架空設定を含みます。</p>
-    </div>
-  </footer>
+  <footer><div class="wrap"><p>表示名：けじまる / LP制作 / ご相談方法：メール（kejiweb78@gmail.com）またはGoogle Chat / 対応範囲：構成案、静的LP、軽微修正まで。</p></div></footer>
 </body>
 </html>
